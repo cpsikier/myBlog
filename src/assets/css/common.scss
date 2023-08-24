@@ -1,0 +1,12 @@
+.num-digit {
+	font-family: 'LCD Digit';
+	font-weight: 500;
+}
+/* 字体颜色渐变 + 字体颜色镂空 */
+.text-gradient {
+	/* 第一个参数默认是从上到下方向 */
+	background-image: linear-gradient(#e5e4ea, #5ea8f2);
+	-webkit-background-clip: text;
+	color: transparent;
+	background-clip: text;
+}
