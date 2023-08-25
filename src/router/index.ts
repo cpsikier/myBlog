@@ -3,17 +3,21 @@
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 // 引入页面
-import Home from '@/views/home/HomeIndex.vue';
+// import Home from '@/views/home/HomeIndex.vue';
 import Login from '@/views/login/LoginIndex.vue';
 import OnePage from '@/views/one/OneIndex.vue';
+// import LayoutIndex from '@/views/layout/layoutIndex.vue';
 // import TemplateOne from '../views/one/OneIndex1.vue';
 
 // 1.配置路由
 const routes: RouteRecordRaw[] = [
 	{
 		path: '/', // 默认路由页面
-		component: Login,
-		
+		name: 'Home',
+		component: () => import('@/views/layout/LayoutIndex.vue'),
+		meta: {
+			title: '首页',
+		}
 	},
 	{
 		name: 'Login',
@@ -23,14 +27,14 @@ const routes: RouteRecordRaw[] = [
 			title: '登录'
 		}
 	},
-	{
+/* 	{
 		name: 'Home',
 		path: '/home',
 		component: Home,
 		meta: {
 			title: '首页'
 		}
-	},
+	}, */
 	{
 		name: 'One',
 		path: '/one',

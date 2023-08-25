@@ -28,8 +28,26 @@ tsc --init
 ```
 ## 6. 安装sass
 ```
-	pnpm install --save-dev sass
-	sass --version
+pnpm install --save-dev sass   (安装)
+sass --version   (查看版本)
+```
+## 7.安装配置unocss
+### 1).安装unocss及三个预设(工具栏预设、属性化模式支持、icon支持)
+```
+pnpm i -D unocss @unocss/preset-uno @unocss/preset-attributify @unocss/preset-icons   (安装unocss)
+``` 
+### 2).在vite.config.ts中配置
+```
+	import Unocss from 'unocss/vite'
+	export default defineConfig({
+		plugins: [Unocss()]
+	})
+```
+### 3).使用
+```
+1.创建unocss.config.ts 配置文件，编写unocss配置
+2.全局引入unocss:   
+	import 'virtual:uno.css';
 ```
 
 # 二、常用包
