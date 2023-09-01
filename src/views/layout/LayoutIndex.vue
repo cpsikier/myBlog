@@ -2,12 +2,19 @@
 	<div class="home_div">
 		<!-- 头部导航栏 -->
 		<VHeader></VHeader>
-		<div class="main_div margin-auto">遮罩</div>
+		<div class="main_div margin-auto">
+      <router-view :key="viewKey"></router-view>
+    </div>
 	</div>
 </template>
 
 <script setup lang="ts">
-	import VHeader from './header/HeaderIndex.vue';
+import { ref, reactive, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import VHeader from './header/HeaderIndex.vue';
+
+  const route = useRoute();
+const viewKey = computed(() => (route.query.t as string) || Date.now());
 </script>
 
 <style>
@@ -18,9 +25,6 @@
 		background-size: 100% 100%;
 		background-attachment: fixed;
 		image-rendering: -webkit-optimize-contrast;
-		/* overflow: hidden; */
-	/* 	flex-direction: column;
-		align-items: center; */
 		
 		.main_div {
 			width: 75vw;

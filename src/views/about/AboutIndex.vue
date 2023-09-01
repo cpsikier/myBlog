@@ -1,5 +1,5 @@
 <template>
-	<div>其他页面</div>
+	<div>about</div>
 </template>
 
 <script>

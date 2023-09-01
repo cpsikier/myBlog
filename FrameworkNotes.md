@@ -50,6 +50,28 @@ pnpm i -D unocss @unocss/preset-uno @unocss/preset-attributify @unocss/preset-ic
 	import 'virtual:uno.css';
 ```
 
+## 7.crypto-js 加密
+Crypto-js是一个JavaScript加密库，用于提供各种加密算法和工具。它支持常见的加密算法，如AES、DES、Triple DES、Rabbit、RC4等，还包括哈希函数和编码方案等功能。
+使用Crypto-js，开发者可以轻松地在浏览器端或Node.js环境中进行数据加密和解密操作，保护数据的安全性。
+### 1).安装crypto-js
+```
+	pnpm install crypto-js
+	pnpm install --save-dev @types/crypto-js
+```
+### 2).新建
+src ——	modules —— crypto-js —— aes.ts
+### 3).aes.ts文件
+		1.设置密钥和密钥偏移量
+		2.封装加密/解密算法
+### 4).使用
+```
+import { createAes } from '@/modules/crypto-js/aes';
+const Aes = createAes(); // 可设置十六位十六进制数
+Aes.encrypt(password) 加密
+Aes.decrypt(data) 解密
+
+```
+
 # 二、常用包
 ## 1. @type/node
 node.js环境中使用的包，用于处理和操作JavaScript中各种数据类型。提供了node的常用的语法提示
